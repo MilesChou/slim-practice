@@ -1,0 +1,17 @@
+{
+    "name": "mileschou/slim-practice",
+    "type": "project",
+    "require": {
+        "slim/slim": "~3.0"
+    },
+    "require-dev": {
+        "codeception/codeception": "~2.2"
+    },
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "MilesChou",
+            "email": "jangconan@gmail.com"
+        }
+    ]
+}
