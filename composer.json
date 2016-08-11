@@ -7,6 +7,11 @@
     "require-dev": {
         "codeception/codeception": "~2.2"
     },
+    "autoload": {
+        "psr-4": {
+            "Miles\\Slim\\": "src/"
+        }
+    },
     "license": "MIT License",
     "authors": [
         {
