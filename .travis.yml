@@ -9,3 +9,7 @@ matrix:
 
 script:
   - composer install
+
+cache:
+  directories:
+    - vendor
