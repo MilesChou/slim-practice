@@ -4,6 +4,7 @@ php:
 
 script:
   - composer install
+  - php vendor/bin/codecept run unit --coverage-html
 
 cache:
   directories:
