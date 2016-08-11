@@ -31,3 +31,5 @@ nbproject/*
 # Composer files
 /vendor/
 composer.phar
+
+tests/_output/*
