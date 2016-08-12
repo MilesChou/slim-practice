@@ -8,6 +8,14 @@ require __DIR__ . '/vendor/autoload.php';
 
 $container = new Slim\Container();
 $container['settings']['displayErrorDetails'] = true;
+$container['database'] = [
+    'adapter' => 'mysql',
+    'host' => '127.0.0.1',
+    'name' => 'default',
+    'user' => 'root',
+    'pass' => 'password',
+    'port' => '3306',
+];
 
 $app = new \Slim\App($container);
 
