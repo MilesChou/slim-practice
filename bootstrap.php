@@ -6,15 +6,18 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 require __DIR__ . '/vendor/autoload.php';
 
+$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv->load();
+
 $container = new Slim\Container();
 $container['settings']['displayErrorDetails'] = true;
 $container['database'] = [
     'adapter' => 'mysql',
-    'host' => '127.0.0.1',
-    'name' => 'default',
-    'user' => 'root',
-    'pass' => 'password',
-    'port' => '3306',
+    'host' => getenv('DB_HOST'),
+    'port' => getenv('DB_PORT'),
+    'name' => getenv('DB_DATABASE'),
+    'user' => getenv('DB_USERNAME'),
+    'pass' => getenv('DB_PASSWORD'),
 ];
 
 $app = new \Slim\App($container);

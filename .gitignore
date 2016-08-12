@@ -32,4 +32,8 @@ nbproject/*
 /vendor/
 composer.phar
 
+# Codeception files
 tests/_output/*
+
+# Dotenv files
+.env
