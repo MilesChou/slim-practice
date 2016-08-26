@@ -20,7 +20,27 @@ class AcceptanceTester extends \Codeception\Actor
 {
     use _generated\AcceptanceTesterActions;
 
-   /**
-    * Define custom actions here
-    */
+    /**
+     * @Given 開啟伺服器
+     */
+    public function 開啟伺服器()
+    {
+        // Do nothing
+    }
+
+    /**
+     * @When 開啟網頁丟 :name 進去
+     */
+    public function 開啟網頁($name)
+    {
+        $this->amOnPage("/hello/$name");
+    }
+
+    /**
+     * @Then 會看到 :hello
+     */
+    public function 會看到($hello)
+    {
+        $this->see($hello);
+    }
 }
