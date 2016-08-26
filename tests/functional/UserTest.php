@@ -1,7 +1,7 @@
 <?php
 
 
-class UserRestTest extends \Codeception\Test\Unit
+class UserTest extends \Codeception\Test\Unit
 {
     /**
      * @var \Slim\App
