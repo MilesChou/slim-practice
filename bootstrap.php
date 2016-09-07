@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
+use \Monolog\Logger;
+use \Monolog\Handler\ErrorLogHandler;
 
 require __DIR__ . '/vendor/autoload.php';
 
@@ -28,6 +30,21 @@ $app->get('/hello/{name}', function (Request $request, Response $response) {
     $greeting = $user->sayHello();
 
     $response->getBody()->write($greeting);
+
+    return $response;
+});
+
+$app->get('/log/{string}', function (Request $request, Response $response) {
+    $string = $request->getAttribute('string');
+
+    $log = new Logger('name');
+    $log->pushHandler(new ErrorLogHandler());
+
+    $log->warning('Foo', $this['environment']->all());
+    $log->error('Bar');
+    $log->info($string);
+
+    $response->getBody()->write($string);
 
     return $response;
 });
