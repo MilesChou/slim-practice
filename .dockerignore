@@ -1,0 +1,12 @@
+# Git files
+.git
+
+# Docker files
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Composer files
+vendor
+composer.phar
+.env

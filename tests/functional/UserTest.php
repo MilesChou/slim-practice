@@ -1,6 +1,6 @@
 <?php
 
-use Framins\Slim\Test\SlimCase;
+use MilesChou\Slim\Test\SlimCase;
 
 class UserTest extends \Codeception\Test\Unit
 {
@@ -32,7 +32,7 @@ class UserTest extends \Codeception\Test\Unit
         $url = '/hello/Miles';
 
         // Act
-        $this->slimCase->get($url);
+        $this->slimCase->sendGET($url);
 
         // Assert
         $this->slimCase->seeResponseOk();
